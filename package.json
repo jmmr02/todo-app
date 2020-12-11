@@ -1,0 +1,23 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A todo app project for a devchallenges.io frontend challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style compressed -o css/ scss/ -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmmr02/todo-app.git"
+  },
+  "author": "jmmr02",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmmr02/todo-app/issues"
+  },
+  "homepage": "https://github.com/jmmr02/todo-app#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

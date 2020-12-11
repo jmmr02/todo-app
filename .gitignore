@@ -1,0 +1,4 @@
+node_modules/
+
+# Ignore output css from scss compilation
+css/
