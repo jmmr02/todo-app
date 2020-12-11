@@ -1,0 +1,19 @@
+.todos {
+	display: flex;
+	align-items: center;
+	margin-bottom: toEm(30px, 18px);
+
+	&__input {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		border: 2px solid var(--grey);
+	}
+
+	&__label {
+		margin-left: toEm(15px, 18px);
+		color: var(--black);
+		font-size: toRem(18px);
+		font-weight: 500;
+	}
+}

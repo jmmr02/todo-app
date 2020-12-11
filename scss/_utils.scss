@@ -1,0 +1,28 @@
+// Variables
+:root {
+	// Font families
+	--ff-primary: "Montserrat", sans-serif;
+	--ff-heading: "Raleway", sans-serif;
+
+	// Colors
+	--black: #000000;
+	--white: #ffffff;
+	--dark-grey: #333333;
+	--grey: #828282;
+	--light-grey: #bdbdbd;
+	--blue-highlight: #2f80ed;
+	--red-highlight: #eb5757;
+	--attribution: #a9a9a9;
+
+	// Box-shadow
+	--btn-box-shadow: 0px 2px 6px rgba(127, 177, 243, 0.4);
+}
+
+// Functions
+@function toRem($size, $baseSize: 16px) {
+	@return ($size / $baseSize) * 1rem;
+}
+
+@function toEm($size, $baseSize: 16px) {
+	@return ($size / $baseSize) * 1em;
+}

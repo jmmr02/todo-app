@@ -1,0 +1,14 @@
+.attribution {
+	font-weight: 600;
+	font-size: toRem(14px);
+	color: var(--attribution);
+}
+
+.attribution,
+.attribution-link,
+.attribution-link:focus,
+.attribution-link:active,
+.attribution-link:visited {
+	text-decoration: none;
+	color: var(--attribution);
+}

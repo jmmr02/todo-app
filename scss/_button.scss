@@ -1,0 +1,24 @@
+.btn {
+	width: 100%;
+	font-weight: 600;
+	color: var(--white);
+	background: var(--blue-highlight);
+	font-size: toRem(14px);
+	border: none;
+	border-radius: 12px;
+	padding: toEm(20px, 14px) toEm(40px, 14px);
+	margin-top: toEm(10px, 14px);
+	cursor: pointer;
+	box-shadow: var(--btn-box-shadow);
+
+	&--delete {
+		background: var(--red-highlight);
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.btn {
+		max-width: 110px;
+	}
+}

@@ -4,11 +4,6 @@
 	box-sizing: border-box;
 }
 
-html {
-	/* Set font size to 10px for easier conversion to rem and em values  */
-	font-size: 62.5%;
-}
-
 h1,
 h2,
 h3,
@@ -33,4 +28,32 @@ img {
 	width: 100%;
 	display: block;
 	height: auto;
+}
+
+body {
+	font-family: var(--ff-primary);
+	height: auto;
+	position: relative;
+	padding: toEm(32px) 0 toEm(100px);
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+h1 {
+	text-align: center;
+	color: var(--dark-grey);
+	font-weight: 700;
+	font-family: var(--ff-heading);
+	font-size: toRem(36px);
+	margin-bottom: toEm(58px, 36px);
+}
+
+footer {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
 }

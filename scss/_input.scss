@@ -1,0 +1,13 @@
+.input-field {
+	display: block;
+	width: 100%;
+	max-width: 476px;
+	border: 1px solid var(--light-grey);
+	color: var(--grey);
+	font-size: toRem(14px);
+	font-weight: 400;
+	font-family: var(--ff-primary);
+	padding: toEm(20px, 14px) toEm(12px, 14px);
+	border-radius: 12px;
+	margin-top: toEm(18px, 14px);
+}
