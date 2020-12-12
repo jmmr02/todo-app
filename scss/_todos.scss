@@ -13,7 +13,11 @@
 	&__label {
 		margin-left: toEm(15px, 18px);
 		color: var(--black);
-		font-size: toRem(18px);
+		font-size: toRem(14px);
 		font-weight: 500;
+
+		&--completed {
+			text-decoration: line-through;
+		}
 	}
 }

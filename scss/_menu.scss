@@ -1,11 +1,17 @@
 .menu {
 	display: flex;
 	justify-content: space-around;
-	padding: toEm(18px) 0;
 	border-bottom: 1px solid var(--light-grey);
 
 	&__item {
+		font-size: toRem(14px);
+		padding: toEm(18px, 14px) toEm(10px, 14px);
 		font-weight: 600;
 		color: var(--dark-grey);
+		cursor: pointer;
+
+		&--active {
+			border-bottom: 3px solid var(--blue-highlight);
+		}
 	}
 }
