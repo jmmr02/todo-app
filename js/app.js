@@ -1,35 +1,69 @@
-const addButton = document.querySelector('[data-hook="js-addBtn"]');
-const todosList = document.querySelector('[data-hook="js-todosList"]');
+const addButton = document.querySelector(".js-addButton");
+const allTodos = document.querySelectorAll(".js-todos");
+const todoList = document.querySelector(".js-todoList");
+const menu = document.querySelector(".js-menu");
 
-let numTodos = document.querySelectorAll('[data-hook="js-todos"]').length;
+let numOfTodos = allTodos.length;
 
-addButton.addEventListener("click", function (e) {
+const existingTodos = [...allTodos];
+let completedTodos = [];
+let activeTodos = [];
+
+function createNewTodo(e) {
 	e.preventDefault();
-
-	const inputField = document.querySelector('[data-hook="js-inputField"]');
+	let inputField = document.querySelector(".js-inputField");
 
 	if (inputField.value !== "") {
-		numTodos += 1;
+		numOfTodos += 1;
 
-		const newTodo = document.createElement("li");
-		newTodo.classList.add("todos");
-		newTodo.dataset.hook = "js-todos";
+		const li = document.createElement("li");
+		li.classList.add("todos", "js-todos");
 
-		const newInput = `<input type="checkbox" name="todos" id="todos-${numTodos}" class="todos__input">`;
-		const newLabel = `<label for="todos-${numTodos}" class="todos__label">${inputField.value}</label>`;
+		const input = document.createElement("input");
+		input.type = "checkbox";
+		input.name = "todos";
+		input.id = `todos-${numOfTodos}`;
+		input.classList.add("todos__input");
 
-		newTodo.innerHTML = `${newInput} ${newLabel}`;
+		const label = document.createElement("label");
+		label.htmlFor = `todos-${numOfTodos}`;
+		label.classList.add("todos__label");
+		label.textContent = `${inputField.value}`;
 
-		todosList.append(newTodo);
+		// append created input and label to li
+		li.appendChild(input);
+		li.appendChild(label);
 
+		// append newly created todo to todo list
+		todoList.appendChild(li);
+
+		// clear input field after adding new todo
 		inputField.value = "";
-	}
-});
 
-todosList.addEventListener("click", function (e) {
-	let element = e.target;
+		// push newly created todos to existing todos
+		existingTodos.push(li);
+	}
+}
+
+function toggleTodoState(e) {
+	const element = e.target;
 
 	if (element.nodeName === "INPUT") {
 		element.nextElementSibling.classList.toggle("todos__label--completed");
+		element.parentElement.classList.toggle("--complete");
 	}
-});
+}
+
+function setActiveTab(e) {
+	const element = e.target;
+
+	if (element.nodeName === "LI") {
+		const lastActive = document.querySelector(".menu__item--active");
+		lastActive.classList.remove("menu__item--active");
+		element.classList.add("menu__item--active");
+	}
+}
+
+addButton.addEventListener("click", createNewTodo);
+todoList.addEventListener("click", toggleTodoState);
+menu.addEventListener("click", setActiveTab);
